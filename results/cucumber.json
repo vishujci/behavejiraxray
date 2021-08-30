@@ -1,0 +1,127 @@
+[
+{
+  "description": "",
+  "elements": [
+    {
+      "description": "",
+      "id": ";chkchk",
+      "keyword": "Scenario",
+      "line": 4,
+      "location": "features/1_DEM-2,DEM-1.feature:4",
+      "name": "chkchk",
+      "steps": [
+        {
+          "keyword": "Given",
+          "line": 5,
+          "match": {
+            "location": "features/steps/steps.py:5"
+          },
+          "name": "open app",
+          "result": {
+            "duration": 0,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "line": 6,
+          "match": {
+            "location": "features/steps/steps.py:10"
+          },
+          "name": "user is pointing url abcde",
+          "result": {
+            "duration": 0,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "line": 7,
+          "match": {
+            "location": "features/steps/steps.py:15"
+          },
+          "name": "user opens the app",
+          "result": {
+            "duration": 0,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [
+        {
+          "line": 3,
+          "name": "TEST_DEM-2"
+        }
+      ],
+      "type": "scenario"
+    },
+    {
+      "description": "",
+      "id": ";demo-test",
+      "keyword": "Scenario",
+      "line": 9,
+      "location": "features/1_DEM-2,DEM-1.feature:9",
+      "name": "demo test",
+      "steps": [
+        {
+          "keyword": "Given",
+          "line": 10,
+          "match": {
+            "location": "features/steps/steps.py:20"
+          },
+          "name": "open app again",
+          "result": {
+            "duration": 0,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "line": 11,
+          "match": {
+            "location": "features/steps/steps.py:25"
+          },
+          "name": "user logs in",
+          "result": {
+            "duration": 0,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "line": 12,
+          "match": {
+            "location": "features/steps/steps.py:30"
+          },
+          "name": "user is logged in",
+          "result": {
+            "duration": 9949684,
+            "error_message": "Traceback (most recent call last):\n  File \"c:\\users\\vishu\\desktop\\behavejiraxray\\myvirtualenv\\lib\\site-packages\\behave\\model.py\", line 1329, in run\n    match.run(runner.context)\n  File \"c:\\users\\vishu\\desktop\\behavejiraxray\\myvirtualenv\\lib\\site-packages\\behave\\matchers.py\", line 98, in run\n    self.func(context, *args, **kwargs)\n  File \"features\\steps\\steps.py\", line 33, in step_impl\n    assert False\nAssertionError\n\nCaptured stdout:\nopen app again\nuser logs in\nuser is logged in",
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [
+        {
+          "line": 8,
+          "name": "TEST_DEM-1"
+        }
+      ],
+      "type": "scenario"
+    }
+  ],
+  "id": "",
+  "keyword": "Feature",
+  "line": 1,
+  "name": "",
+  "status": "failed",
+  "tags": [],
+  "uri": "features/1_DEM-2,DEM-1.feature"
+}
+]
