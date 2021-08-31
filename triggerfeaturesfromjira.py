@@ -50,3 +50,5 @@ if __name__ == "__main__":
         get_features_files_from_jira(token,config.get(sectionsConfig[x],'tickets'))
 
 
+
+        
