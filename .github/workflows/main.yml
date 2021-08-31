@@ -41,7 +41,7 @@ jobs:
       - name: Run a multi-line script
         run: |
               python triggerfeaturesfromjira.py tickets.ini
-              behave --format=cucumber_json126:PrettyCucumberJSONFormatter -o results/cucumber.json  --format=json -o results/behave.json features
+              behave  features
               python importtojira.py
         
             
