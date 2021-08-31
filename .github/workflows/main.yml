@@ -32,11 +32,18 @@ jobs:
             python-version: 3.9.6
                  
       # setting up pip and added requiments.txt
-      - name: Run a multi-line script
+      - name: install pip and requirements.txt
         run: |
             python -m pip install --upgrade pip
             pip install -r requirements.txt
       
+      
+  get-jira-features-build:
+    # The type of runner that the job will run on
+    needs: [build]
+    runs-on: self-hosted
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:       
       # run python files
       - name: get features from jira
         run: |
@@ -47,7 +54,14 @@ jobs:
         run: |
             ls
             behave --format=cucumber_json:PrettyCucumberJSONFormatter -o results/cucumber.json  --format=json -o results/behave.json features
-              
+  
+  
+  import-to-jira-build:
+    # The type of runner that the job will run on
+    needs: [get-jira-features-build]
+    runs-on: self-hosted
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
       - name: upload execution results to jira
         run: |
             python importtojira.py
