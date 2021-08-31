@@ -7,12 +7,12 @@ import sys
 
 
 def getconfig():
-    # try:
-    print(sys.argv)
-    config = configparser.ConfigParser()
-    config.read(rootpath.detect() + "\\" + sys.argv[1])
-    # except Exception as e:
-    # raise e
+    try:
+        print(sys.argv)
+        config = configparser.ConfigParser()
+        config.read(rootpath.detect() + "\\" + sys.argv[1])
+    except Exception as e:
+        raise e
     return config
 
 
@@ -48,5 +48,6 @@ if __name__ == "__main__":
     sectionsLength = len(sectionsConfig)
     print("hello yellow")
     for x in range(sectionsLength):
+
         token = get_jira_authentication_token()
         get_features_files_from_jira(token, config.get(sectionsConfig[x], 'tickets'))
