@@ -29,7 +29,7 @@ def get_features_files_from_jira(bearer_token: str,ticketkeys: str):
 
     try:
         response = requests.get('https://xray.cloud.xpand-it.com/api/v2/export/cucumber?keys=' + ticketkeys,headers={'Content-Type':'application/json','Authorization': 'Bearer ' + bearer_token})
-        print(response)
+        print(response.text)
         with open("chkfeatures.zip","wb") as code:
             code.write(response.content)
         with zipfile.ZipFile("chkfeatures.zip", "r") as zip_ref:
