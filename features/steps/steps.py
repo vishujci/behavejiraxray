@@ -13,6 +13,7 @@ def step_impl(context):
 def step_imp(context):
     print('user comes in')
 
+
 @given('open app')
 def step_impl(context):
     print("open app")
