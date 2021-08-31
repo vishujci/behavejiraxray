@@ -38,12 +38,19 @@ jobs:
             pip install -r requirements.txt
       
       # run python files
-      - name: Run a multi-line script
+      - name: get features from jira
         run: |
             ls
             python triggerfeaturesfromjira.py tickets.ini
+      
+      - name: change from behave json to cucumber json
+        run: |
+            ls
             behave --format=cucumber_json:PrettyCucumberJSONFormatter -o results/cucumber.json  --format=json -o results/behave.json features
               
+      - name: upload execution results to jira
+        run: |
+            python importtojira.py
         
             
             
