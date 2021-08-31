@@ -35,7 +35,7 @@ jobs:
       - name: install pip and requirements.txt
         run: |
             python -m pip install --upgrade pip
-            pip install -r requirements.txt
+            
       
       
   get-jira-features-build:
@@ -47,6 +47,7 @@ jobs:
       # run python files
       - name: get features from jira
         run: |
+            pip install -r requirements.txt
             ls
             python triggerfeaturesfromjira.py tickets.ini
       
