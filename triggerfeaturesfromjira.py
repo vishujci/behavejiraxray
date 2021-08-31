@@ -49,6 +49,4 @@ if __name__ == "__main__":
         token = get_jira_authentication_token()
         get_features_files_from_jira(token,getconfig()[getconfig().sections()[x]]['tickets'])
 
-    token = get_jira_authentication_token()
-    export_to_jira(token)
 
