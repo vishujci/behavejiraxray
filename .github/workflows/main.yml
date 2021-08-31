@@ -53,13 +53,13 @@ jobs:
             .\activate
             cd ../..
             pip install -r requirements.txt
-            ls
-      #  python triggerfeaturesfromjira.py tickets.ini
+            python triggerfeaturesfromjira.py tickets.ini
+            behave --format=cucumber_json:PrettyCucumberJSONFormatter -o results/cucumber.json  --format=json -o results/behave.json features
       
       - name: change from behave json to cucumber json
         run: |
             ls
-            behave --format=cucumber_json:PrettyCucumberJSONFormatter -o results/cucumber.json  --format=json -o results/behave.json features
+            
   
   
   import-to-jira-build:
