@@ -41,7 +41,6 @@ def step_impl(context):
 @then('user is logged in')
 def step_impl(context):
     print('user is logged in')
-    assert False
 
 
 @given('user do something')
