@@ -40,9 +40,9 @@ jobs:
       # run python files
       - name: Run a multi-line script
         run: |
-              triggerfeaturesfromjira.py tickets.ini
+              python triggerfeaturesfromjira.py tickets.ini
               behave --format=cucumber_json:PrettyCucumberJSONFormatter -o results/cucumber.json  --format=json -o results/behave.json features
-              importtojira.py
+              python importtojira.py
         
             
             
