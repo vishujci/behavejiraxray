@@ -48,7 +48,8 @@ jobs:
       - name: get features from jira
         run: |
             python -m venv virtualenv
-            call virtualenv/Scripts/activate
+            cd virtualenv/Scripts/activate
+            ls
             pip install -r requirements.txt
             ls
       #  python triggerfeaturesfromjira.py tickets.ini
