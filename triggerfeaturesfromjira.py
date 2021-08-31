@@ -6,13 +6,12 @@ import rootpath
 import sys
 
 def getconfig():
-    try:
-       print(sys.argv)
-       config = configparser.ConfigParser()
-       config.read(rootpath.detect() + "\\"+sys.argv[1])
-    except Exception as e:
-        raise e
-
+    # try:
+    print(sys.argv)
+    config = configparser.ConfigParser()
+    config.read(rootpath.detect() + "\\"+sys.argv[1])
+    # except Exception as e:
+        # raise e
     return config
 
 
@@ -30,7 +29,6 @@ def get_features_files_from_jira(bearer_token: str,ticketkeys: str):
 
     try:
         response = requests.get('https://xray.cloud.xpand-it.com/api/v2/export/cucumber?keys=' + ticketkeys,headers={'Content-Type':'application/json','Authorization': 'Bearer ' + bearer_token})
-        print(response)
         with open("chkfeatures.zip","wb") as code:
             code.write(response.content)
         with zipfile.ZipFile("chkfeatures.zip", "r") as zip_ref:
@@ -43,11 +41,11 @@ def get_features_files_from_jira(bearer_token: str,ticketkeys: str):
 
 
 if __name__ == "__main__":
-    print(getconfig().sections())
-    print(len(getconfig().sections()))
-    for x in range(len(getconfig().sections())):
-        print(getconfig()[getconfig().sections()[x]]['tickets'])
+    config = getconfig()
+    sectionsConfig = config.sections()
+    sectionsLength = len(sectionsConfig)
+    for x in range(sectionsLength):
         token = get_jira_authentication_token()
-        get_features_files_from_jira(token,getconfig()[getconfig().sections()[x]]['tickets'])
+        get_features_files_from_jira(token,config.get(sectionsConfig[x],'tickets'))
 
 
