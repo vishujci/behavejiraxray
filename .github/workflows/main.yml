@@ -47,9 +47,11 @@ jobs:
       # run python files
       - name: get features from jira
         run: |
+            python -m venv virtualenv
+            call virtualenv/Scripts/activate
             pip install -r requirements.txt
             ls
-            python triggerfeaturesfromjira.py tickets.ini
+      #  python triggerfeaturesfromjira.py tickets.ini
       
       - name: change from behave json to cucumber json
         run: |
