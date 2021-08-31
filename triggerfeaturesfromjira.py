@@ -46,6 +46,7 @@ if __name__ == "__main__":
     config = getconfig()
     sectionsConfig = config.sections()
     sectionsLength = len(sectionsConfig)
+    print("hello yellow")
     for x in range(sectionsLength):
         token = get_jira_authentication_token()
         get_features_files_from_jira(token, config.get(sectionsConfig[x], 'tickets'))
