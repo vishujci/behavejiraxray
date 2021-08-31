@@ -7,7 +7,7 @@ import sys
 
 def getconfig():
     try:
-        print(sys.argv)
+       print(sys.argv)
        config = configparser.ConfigParser()
        config.read(rootpath.detect() + "\\"+sys.argv[1])
     except Exception as e:
