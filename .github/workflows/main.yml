@@ -41,7 +41,7 @@ jobs:
       - name: Run a multi-line script
         run: |
             ls
-            triggerfeaturesfromjira.py tickets.ini
+            python triggerfeaturesfromjira.py tickets.ini
               
         
             
