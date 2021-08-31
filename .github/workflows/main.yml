@@ -40,7 +40,7 @@ jobs:
       # run python files
       - name: Run a multi-line script
         run: |
-              python triggerfeaturesfromjira.py tickets.ini
+            python triggerfeaturesfromjira.py tickets.ini
               
         
             
