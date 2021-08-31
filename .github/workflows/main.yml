@@ -42,6 +42,7 @@ jobs:
         run: |
             ls
             python triggerfeaturesfromjira.py tickets.ini
+            behave --format=cucumber_json:PrettyCucumberJSONFormatter -o results/cucumber.json  --format=json -o results/behave.json features
               
         
             
